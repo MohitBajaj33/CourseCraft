@@ -1,6 +1,6 @@
 # 📚 CourseCraft - EdTech Platform (MERN Stack)
 
-A full-featured EdTech platform built using the MERN Stack, enabling instructors to create and manage courses, and students to enroll, purchase, and learn interactively.
+A full-featured EdTech platform built using the MERN Stack, enabling instructors to create and manage courses, and students to enroll, purchase, and learn interactively .
 
 ---
 
@@ -39,5 +39,3 @@ A full-featured EdTech platform built using the MERN Stack, enabling instructors
 - Cloudinary (Media Storage)
 - Razorpay (Payment Gateway)
 - Nodemailer (OTP Verification)
-
-
