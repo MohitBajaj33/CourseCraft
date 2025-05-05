@@ -395,6 +395,8 @@ export const deleteCourse = async (data, token) => {
 export const getFullDetailsOfCourse = async (courseId, token) => {
   // const toastId = toast.loading("Loading...")
   //   dispatch(setLoading(true));
+  // console.log(courseId, token);
+  
   let result = null
   try {
     const response = await apiConnector(

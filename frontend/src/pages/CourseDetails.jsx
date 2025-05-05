@@ -138,6 +138,8 @@ function CourseDetails() {
 
   // Buy Course handler
   const handleBuyCourse = () => {
+    // console.log("mohit Bajaj");
+    
     if (token) {
       const coursesId = [courseId]
       buyCourse(token, coursesId, user, navigate, dispatch)

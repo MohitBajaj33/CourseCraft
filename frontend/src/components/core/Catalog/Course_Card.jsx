@@ -19,6 +19,12 @@ function Course_Card({ course, Height }) {
     setAvgReviewCount(count)
   }, [course])
   // console.log("count............", avgReviewCount)
+  //  console.log("course", course);
+  //   console.log("course thumnail", course?.instructor?.firstName)
+
+
+  // const instructorName = `${course?.instructor?.firstName} ${course?.instructor?.lastName}`
+  // console.log("Instructor Name", instructorName)
 
   return (
     <div className='hover:scale-[1.03] transition-all duration-200 z-50 '>
@@ -33,8 +39,8 @@ function Course_Card({ course, Height }) {
           </div>
           <div className="flex flex-col gap-2 px-1 py-3">
             <p className="text-xl text-richblack-5">{course?.courseName}</p>
-            <p className="text-sm text-richblack-50">
-              {course?.instructor?.firstName} {course?.instructor?.lastName}
+            <p className="text-xl text-richblack-5">
+            {course?.instructor?.firstName ? `${course.instructor.firstName} ${course.instructor.lastName}` : "Instructor : "}
             </p>
             <div className="flex items-center gap-2">
               <span className="text-yellow-5">{avgReviewCount || 0}</span>

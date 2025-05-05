@@ -17,6 +17,8 @@ const { default: mongoose } = require('mongoose')
 exports.capturePayment = async (req, res) => {
 
     // extract courseId & userId
+    // console.log("hii");
+    
     const { coursesId } = req.body;
     // console.log('coursesId = ', typeof (coursesId))
     // console.log('coursesId = ', coursesId)

@@ -51,6 +51,7 @@ const randomImges = [
 
 // hardcoded
 
+// console.log("mohit", CatalogPageData?.selectedCategory?.courses);
 
 
 const Home = () => {
@@ -67,7 +68,8 @@ const Home = () => {
 
     // get courses data
     const [CatalogPageData, setCatalogPageData] = useState(null);
-    const categoryID = "6506c9dff191d7ffdb4a3fe2" // hard coded
+    const categoryID = "67daf818376811b22a7a7d1f" // hard coded
+    
     const dispatch = useDispatch();
 
     useEffect(() => {

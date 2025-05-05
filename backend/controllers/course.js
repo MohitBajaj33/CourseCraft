@@ -157,7 +157,6 @@ exports.getCourseDetails = async (req, res) => {
             })
             .populate("category")
             .populate("ratingAndReviews")
-
             .populate({
                 path: "courseContent",
                 populate: {
@@ -222,7 +221,9 @@ exports.getFullCourseDetails = async (req, res) => {
     try {
         const { courseId } = req.body
         const userId = req.user.id
+
         // console.log('courseId userId  = ', courseId, " == ", userId)
+        // console.log(Course);
 
         const courseDetails = await Course.findOne({
             _id: courseId,
@@ -242,13 +243,16 @@ exports.getFullCourseDetails = async (req, res) => {
                 },
             })
             .exec()
+        // console.log(courseDetails);
+
+
 
         let courseProgressCount = await CourseProgress.findOne({
             courseID: courseId,
             userId: userId,
         })
 
-        //   console.log("courseProgressCount : ", courseProgressCount)
+          console.log("courseProgressCount : ", courseProgressCount)
 
         if (!courseDetails) {
             return res.status(404).json({
@@ -273,7 +277,8 @@ exports.getFullCourseDetails = async (req, res) => {
             })
         })
 
-        const totalDuration = convertSecondsToDuration(totalDurationInSeconds)
+        const totalDuration = convertSecondsToDuration(totalDurationInSeconds);
+
 
         return res.status(200).json({
             success: true,
