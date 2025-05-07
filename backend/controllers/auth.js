@@ -77,7 +77,7 @@ exports.signup = async (req, res) => {
             accountType, contactNumber, otp } = req.body;
 
         // validation
-        if (!firstName || !lastName || !email || !password || !confirmPassword || !accountType || !otp) {
+        if (!firstName || !email || !password || !confirmPassword || !accountType || !otp) {
             return res.status(401).json({
                 success: false,
                 message: 'All fields are required..!'
@@ -115,11 +115,15 @@ exports.signup = async (req, res) => {
 
 
         // if otp not found
+        console.log('recentOtp - ', recentOtp);
+        console.log('tOtp - ', otp) ;
+
         if (!recentOtp || recentOtp.length == 0) {
             return res.status(400).json({
                 success: false,
                 message: 'Otp not found in DB, please try again'
             });
+        
         } else if (otp !== recentOtp.otp) {
             // otp invalid
             return res.status(400).json({

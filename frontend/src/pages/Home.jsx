@@ -14,6 +14,7 @@ import ReviewSlider from '../components/common/ReviewSlider'
 import Course_Slider from '../components/core/Catalog/Course_Slider'
 
 import { getCatalogPageData } from '../services/operations/pageAndComponentData'
+import { getAllCourses } from '../services/operations/courseDetailsAPI'
 
 import { MdOutlineRateReview } from 'react-icons/md'
 import { FaArrowRight } from "react-icons/fa"
@@ -51,7 +52,7 @@ const randomImges = [
 
 // hardcoded
 
-// console.log("mohit", CatalogPageData?.selectedCategory?.courses);
+
 
 
 const Home = () => {
@@ -68,15 +69,17 @@ const Home = () => {
 
     // get courses data
     const [CatalogPageData, setCatalogPageData] = useState(null);
-    const categoryID = "67daf818376811b22a7a7d1f" // hard coded
+    const categoryID = "6818e8b5065e1d24238300ed" // hard coded
     
     const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchCatalogPageData = async () => {
 
-            const result = await getCatalogPageData(categoryID, dispatch);
+            const result = await getAllCourses();
             setCatalogPageData(result);
+            console.log("mohit87678", CatalogPageData);
+            
             // console.log("page data ==== ",CatalogPageData);
         }
         if (categoryID) {
@@ -84,7 +87,7 @@ const Home = () => {
         }
     }, [categoryID])
 
-
+    console.log("mohit", CatalogPageData?.selectedCategory?.courses);
     // console.log('================ CatalogPageData?.selectedCourses ================ ', CatalogPageData)
 
 
@@ -222,14 +225,15 @@ const Home = () => {
                         <h2 className='text-white mb-6 text-2xl '>
                             Popular Picks for You 🏆
                         </h2>
-                        <Course_Slider Courses={CatalogPageData?.selectedCategory?.courses} />
+                                <Course_Slider Courses={CatalogPageData} />
+                
                     </div>
-                    <div className=' mx-auto box-content w-full max-w-maxContentTab px- py-12 lg:max-w-maxContent'>
+                    {/* <div className=' mx-auto box-content w-full max-w-maxContentTab px- py-12 lg:max-w-maxContent'>
                         <h2 className='text-white mb-6 text-2xl '>
                             Top Enrollments Today 🔥
                         </h2>
                         <Course_Slider Courses={CatalogPageData?.mostSellingCourses} />
-                    </div>
+                    </div> */}
 
 
                     <ExploreMore />

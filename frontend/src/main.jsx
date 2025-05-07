@@ -19,9 +19,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Provider store={store}>
       {/* <React.StrictMode> */}
-        <App />
-        <Toaster />
-      {/* </React.StrictMode> */}
+        <App  />
+        <Toaster toastOptions={{ duration: 1000 }} />
+        {/* </React.StrictMode> */}
     </Provider>
   </BrowserRouter>
 )
