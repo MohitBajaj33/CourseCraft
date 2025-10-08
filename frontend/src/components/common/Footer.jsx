@@ -185,7 +185,7 @@ const Footer = () => {
             <div className="flex ">
               <span> Made with ❤️</span>
 
-              <Link to='https://github.com/Aniruddha-Gade' target="__blank" className="text-white hover:underline mr-1"
+              <Link to='https://github.com/MohitBajaj33' target="__blank" className="text-white hover:underline mr-1"
               >
                 Mohit Bajaj
               </Link>
